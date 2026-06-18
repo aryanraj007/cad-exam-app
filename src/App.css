@@ -1,0 +1,103 @@
+.app-container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  min-height: 100vh;
+}
+
+.main-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.welcome-screen {
+  text-align: center;
+  padding: 2rem 1rem;
+  animation: cardFadeIn 0.4s ease;
+}
+
+.welcome-icon-wrap {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+}
+
+.welcome-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.welcome-desc {
+  color: rgba(255,255,255,0.55);
+  max-width: 500px;
+  margin: 0 auto 0.75rem;
+  line-height: 1.6;
+}
+
+.welcome-info {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.info-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.start-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 2rem;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: 'Inter', sans-serif;
+  margin-top: 0.5rem;
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.45);
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .app-container { padding: 1rem 0.75rem 2rem; }
+  .main-card { padding: 1.25rem; border-radius: 16px; }
+  .welcome-title { font-size: 1.4rem; }
+}

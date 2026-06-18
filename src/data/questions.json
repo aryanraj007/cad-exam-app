@@ -1,0 +1,2202 @@
+[
+  {
+    "id": "Q1",
+    "question": "Script actions are triggered by which ServiceNow mechanism?",
+    "options": [
+      "Events",
+      "Schedules",
+      "UI Policies",
+      "Business Rules"
+    ],
+    "correctAnswer": "Events"
+  },
+  {
+    "id": "Q2",
+    "question": "Which one of the following is the fastest way to create and configure a Record Producer?",
+    "options": [
+      "Create a Catalog Category, open the category, and select Add New Record Producer",
+      "Use the Record Producer module then add and configure all variables manually",
+      "Open the table in Table records and select the Add to Service Catalog Related Link",
+      "Open the table's form, right-click on the form header, and select Create Record Producer"
+    ],
+    "correctAnswer": "Open the table in Table records and select the Add to Service Catalog Related Link"
+  },
+  {
+    "id": "Q3",
+    "question": "Which one of the following is the baseline behavior of a table in a privately-scoped application?",
+    "options": [
+      "The table and its data are not accessible using web services",
+      "Any Business Rule can read, write, delete, and update from the table",
+      "Only artifacts in the table's application can read from the table",
+      "All application scopes can read from the table"
+    ],
+    "correctAnswer": "All application scopes can read from the table"
+  },
+  {
+    "id": "Q4",
+    "question": "When configuring a module, what does the Override application menu roles configuration option do?",
+    "options": [
+      "Users with the module role but without access to the application menu access the module",
+      "Self-Service users can access the module even though they do not have roles",
+      "Admin is given access to the module even if Access Controls would ordinarily prevent access",
+      "Users with access to the application menu can see the module even if they don't have the module role"
+    ],
+    "correctAnswer": "Users with the module role but without access to the application menu access the module"
+  },
+  {
+    "id": "Q5",
+    "question": "Which of the following features are available to Global applications? (Choose two.)",
+    "options": [
+      "Automated Test Framework and Source Control",
+      "Delegated Development and Flow Designer",
+      "Automated Test Framework and Delegated Development",
+      "Source Control and Flow Designer"
+    ],
+    "correctAnswer": "Delegated Development and Flow Designer"
+  },
+  {
+    "id": "Q6",
+    "question": "What is a Module?",
+    "options": [
+      "The functionality within an application menu such as opening a page in the content frame or a separate tab or window",
+      "A group of menus providing related information and functionality to end-users",
+      "A way of helping users quickly access information by filtering the Application Navigator",
+      "A web-based way of providing software to end-users"
+    ],
+    "correctAnswer": "The functionality within an application menu such as opening a page in the content frame or a separate tab or window"
+  },
+  {
+    "id": "Q7",
+    "question": "Identify the INCORRECT statement about DELEGATED DEVELOPMENT in ServiceNow.",
+    "options": [
+      "Administrators can grant non-admin users the ability to develop global applications",
+      "Administrators can specify which application file types the developer can access",
+      "Administrators can grant the developer access to script fields",
+      "Administrators can grant the developer access to security records"
+    ],
+    "correctAnswer": "Administrators can grant non-admin users the ability to develop global applications"
+  },
+  {
+    "id": "Q8",
+    "question": "The Business Rule script template uses a self-executing function pattern. This type of JavaScript function is known as:",
+    "options": [
+      "Constructor",
+      "Scoped",
+      "Anonymous",
+      "Self-invoking"
+    ],
+    "correctAnswer": "Self-invoking"
+  },
+  {
+    "id": "Q9",
+    "question": "What are some of the benefits of extending an existing table such as the Task table when creating a new application?",
+    "options": [
+      "a, b, c, and d",
+      "a and b only",
+      "b and c only",
+      "Repurpose existing fields, use existing fields, inherit parent logic"
+    ],
+    "correctAnswer": "Repurpose existing fields, use existing fields, inherit parent logic"
+  },
+  {
+    "id": "Q10",
+    "question": "Which method call returns true only if the currently logged in user has the catalog_admin role and in no other case?",
+    "options": [
+      "g_user.hasRole('catalog_admin')",
+      "g_user.hasRoleExactly('catalog_admin')",
+      "g_user.hasRoleOnly('catalog_admin')",
+      "g_user.hasRoleFromList('catalog_admin')"
+    ],
+    "correctAnswer": "g_user.hasRoleExactly('catalog_admin')"
+  },
+  {
+    "id": "Q11",
+    "question": "How must Application Access be configured to prevent all other private application scopes from creating configuration records on an application's data tables?",
+    "options": [
+      "Create Access Controls to prevent other scopes from creating records",
+      "Set Accessible from to All application scopes and de-select Can create",
+      "Set Accessible from to This application scope only and de-select Allow web services",
+      "Set the Accessible from field value to This application scope only"
+    ],
+    "correctAnswer": "Set the Accessible from field value to This application scope only"
+  },
+  {
+    "id": "Q12",
+    "question": "What are some of the considerations to document as part of the business process?",
+    "options": [
+      "Business problem, data input/output, users/stakeholders, and process steps",
+      "Business problem, data input/output, project schedule, and process steps",
+      "Business problem, data input/output, users/stakeholders, and database capacity",
+      "Business problem, users/stakeholders, available licenses, and database capacity"
+    ],
+    "correctAnswer": "Business problem, data input/output, users/stakeholders, and process steps"
+  },
+  {
+    "id": "Q13",
+    "question": "To see what scripts, reports, and other application artifacts will be in a published application:",
+    "options": [
+      "Enter the name of the Application in the Global search field",
+      "Open the list of Update Sets for the instance",
+      "Examine the Application Files Related List in the application to be published",
+      "Open the artifact records individually to verify the value in the Application field"
+    ],
+    "correctAnswer": "Examine the Application Files Related List in the application to be published"
+  },
+  {
+    "id": "Q14",
+    "question": "Application developers configure ServiceNow using industry standard JavaScript to:",
+    "options": [
+      "Enable the right-click context menus on application in the navigator",
+      "Extend and add functionality",
+      "Customize the organization's company logo and banner text",
+      "Configure the outgoing email display name"
+    ],
+    "correctAnswer": "Extend and add functionality"
+  },
+  {
+    "id": "Q15",
+    "question": "Which of the following are configured in an email notification?",
+    "options": [
+      "Who, What, How",
+      "What, When, How",
+      "Who, What, When",
+      "Who, When, How"
+    ],
+    "correctAnswer": "Who, What, When"
+  },
+  {
+    "id": "Q16",
+    "question": "Which of the following CANNOT be debugged using Field Watcher?",
+    "options": [
+      "Business Rules",
+      "Script Includes",
+      "Client Scripts",
+      "Access Controls"
+    ],
+    "correctAnswer": "Script Includes"
+  },
+  {
+    "id": "Q17",
+    "question": "Which of the following is not supported by Flow Designer?",
+    "options": [
+      "Call a subflow from a flow",
+      "Test a flow with rollback",
+      "Use Delegated Developer",
+      "Run a flow from a metricBase trigger"
+    ],
+    "correctAnswer": "Test a flow with rollback"
+  },
+  {
+    "id": "Q18",
+    "question": "Which of the following statements does NOT apply when extending an existing table?",
+    "options": [
+      "The parent table's Access Controls are evaluated for the new table",
+      "The new table inherits the functionality built into the parent table",
+      "The new table inherits all of the fields from the parent table",
+      "You must script and configure all required behaviors"
+    ],
+    "correctAnswer": "You must script and configure all required behaviors"
+  },
+  {
+    "id": "Q19",
+    "question": "Which of the following are true for reports in ServiceNow? (Choose three.)",
+    "options": [
+      "Any user can see any report shared with them",
+      "Can be a graphical representation of data",
+      "All users can generate reports on any table",
+      "Can be run on demand by authorized users and scheduled to be distributed by email"
+    ],
+    "correctAnswer": "Can be a graphical representation of data"
+  },
+  {
+    "id": "Q20",
+    "question": "Which of the following is NOT a trigger type in Flow Designer?",
+    "options": [
+      "Outbound Email",
+      "Application",
+      "Record",
+      "Schedule"
+    ],
+    "correctAnswer": "Outbound Email"
+  },
+  {
+    "id": "Q21",
+    "question": "One of the uses of the ServiceNow REST API Explorer is:",
+    "options": [
+      "Practice using REST to interact with public data providers",
+      "Find resources on the web for learning about REST",
+      "Convert SOAP Message functions to REST methods",
+      "Create sample code for sending REST requests to ServiceNow"
+    ],
+    "correctAnswer": "Create sample code for sending REST requests to ServiceNow"
+  },
+  {
+    "id": "Q22",
+    "question": "Which platform feature determines the relationship between a field in an import set table to a field in an existing ServiceNow table?",
+    "options": [
+      "Business Service Management Map",
+      "Transform Map",
+      "Data Sources",
+      "CI Relationship Builder"
+    ],
+    "correctAnswer": "Transform Map"
+  },
+  {
+    "id": "Q23",
+    "question": "When configuring an Access Control with no condition or script, which statement is NOT true?",
+    "options": [
+      "table.* will grant access to every field in a record",
+      "table.None will grant access to every record on the table",
+      "table.field will grant access to a specific field in a record",
+      "table.id will grant access to a specific record on the table"
+    ],
+    "correctAnswer": "table.id will grant access to a specific record on the table"
+  },
+  {
+    "id": "Q24",
+    "question": "Which source control operation is available from BOTH Studio and the Git Repository?",
+    "options": [
+      "Create Branch",
+      "Apply Remote Changes",
+      "Stash Local Changes",
+      "Edit Repository Configurations"
+    ],
+    "correctAnswer": "Create Branch"
+  },
+  {
+    "id": "Q25",
+    "question": "When creating new application files in a scoped application, cross scope access is turned on by default in which of the following?",
+    "options": [
+      "REST messages",
+      "Table",
+      "Script Include",
+      "Workflow"
+    ],
+    "correctAnswer": "Table"
+  },
+  {
+    "id": "Q26",
+    "question": "Which one of the following is true about UI Policy execution order?",
+    "options": [
+      "A UI Policy's Actions execute before the UI Policy's Scripts",
+      "The execution order is determined at runtime",
+      "A UI Policy's Scripts execute before the UI Policy's Actions",
+      "Actions and Scripts execute at the same time"
+    ],
+    "correctAnswer": "A UI Policy's Actions execute before the UI Policy's Scripts"
+  },
+  {
+    "id": "Q27",
+    "question": "When evaluating Access Controls, ServiceNow searches and evaluates:",
+    "options": [
+      "Only for matches on the current table",
+      "Only for matches on the current field",
+      "From the most specific match to the most generic match",
+      "From the most generic match to the most specific match"
+    ],
+    "correctAnswer": "From the most specific match to the most generic match"
+  },
+  {
+    "id": "Q28",
+    "question": "Which Report Type(s) can be created by right-clicking on a column header in a table's list?",
+    "options": [
+      "Bar Chart, Pie Chart, Histogram, and Line",
+      "Bar Chart only",
+      "Bar Chart, Pie Chart, and Histogram",
+      "Bar Chart and Pie Chart"
+    ],
+    "correctAnswer": "Bar Chart and Pie Chart"
+  },
+  {
+    "id": "Q29",
+    "question": "When working in the Form Designer, configuring the label of a field in a child table changes the label on which table(s)?",
+    "options": [
+      "Base table",
+      "Child table",
+      "Parent table",
+      "All tables"
+    ],
+    "correctAnswer": "Child table"
+  },
+  {
+    "id": "Q30",
+    "question": "In an Email Notification, which one of the following is NOT true for the Weight field?",
+    "options": [
+      "Only Notifications with the highest weight for the same record and recipients are sent",
+      "A Weight value of zero means that no email should be sent",
+      "The Weight value defaults to zero",
+      "A Weight value of zero means the Notification is always sent when criteria is met"
+    ],
+    "correctAnswer": "A Weight value of zero means that no email should be sent"
+  },
+  {
+    "id": "Q31",
+    "question": "Which of the following methods are useful in Access Control scripts?",
+    "options": [
+      "g_user.hasRole() and current.isNewRecord()",
+      "gs.hasRole() and current.isNewRecord()",
+      "g_user.hasRole() and current.isNew()",
+      "gs.hasRole() and current.isNew()"
+    ],
+    "correctAnswer": "gs.hasRole() and current.isNewRecord()"
+  },
+  {
+    "id": "Q32",
+    "question": "Modules must have a Link type. Which one of the following is a list of valid Link types?",
+    "options": [
+      "List of Records, Separator, Catalog Type, Roles",
+      "Assessment, List of Records, Separator, Timeline Page",
+      "List of Records, Content Page, Order, URL (from arguments:)",
+      "Assessment, List of Records, Content Page, Roles"
+    ],
+    "correctAnswer": "Assessment, List of Records, Separator, Timeline Page"
+  },
+  {
+    "id": "Q33",
+    "question": "Which of the following is part of the client-side scripting API?",
+    "options": [
+      "workflow.scratchpad",
+      "GlideUser Object (g_user)",
+      "Current and previous objects",
+      "GlideSystem Object (gs)"
+    ],
+    "correctAnswer": "GlideUser Object (g_user)"
+  },
+  {
+    "id": "Q34",
+    "question": "Which objects can you use in a Scheduled Script Execution (Scheduled Job) script?",
+    "options": [
+      "GlideRecord and current",
+      "GlideUser and GlideRecord",
+      "GlideSystem and GlideRecord",
+      "GlideSystem and current"
+    ],
+    "correctAnswer": "GlideSystem and GlideRecord"
+  },
+  {
+    "id": "Q35",
+    "question": "Which one of the following is true for GlideUser (g_user) methods?",
+    "options": [
+      "Can be used in Client Scripts and UI Policies only",
+      "Can be used in Business Rules only",
+      "Can be used in Client Scripts, UI Policies and UI Actions",
+      "Can be used in Business Rules and Script Includes"
+    ],
+    "correctAnswer": "Can be used in Client Scripts, UI Policies and UI Actions"
+  },
+  {
+    "id": "Q36",
+    "question": "Which of the following methods prints a message on a blue background to the top of the current form?",
+    "options": [
+      "g_form.addInfoMsg()",
+      "g_form.addInfoMessage()",
+      "g_form.showFieldMessage()",
+      "g_form.showFieldMsg()"
+    ],
+    "correctAnswer": "g_form.addInfoMessage()"
+  },
+  {
+    "id": "Q37",
+    "question": "There is a basic strategy when creating a Utils Script Include. Identify the step that does NOT belong.",
+    "options": [
+      "Identify the table",
+      "Script the function(s)",
+      "Create a class",
+      "Create a prototype object from the new class"
+    ],
+    "correctAnswer": "Identify the table"
+  },
+  {
+    "id": "Q38",
+    "question": "In a Business Rule, which one of the following returns true if the currently logged in user has the admin role?",
+    "options": [
+      "g_form.hasRoleExactly('admin')",
+      "gs.hasRole('admin')",
+      "g_form.hasRole('admin')",
+      "g_user.hasRole('admin')"
+    ],
+    "correctAnswer": "gs.hasRole('admin')"
+  },
+  {
+    "id": "Q39",
+    "question": "When a ServiceNow instance requests information from a web service, ServiceNow is the web service:",
+    "options": [
+      "Publisher",
+      "Specialist",
+      "Provider",
+      "Consumer"
+    ],
+    "correctAnswer": "Consumer"
+  },
+  {
+    "id": "Q40",
+    "question": "Which of the following objects does a Display Business Rule NOT have access to?",
+    "options": [
+      "previous",
+      "GlideSystem",
+      "g_scratchpad",
+      "current"
+    ],
+    "correctAnswer": "previous"
+  },
+  {
+    "id": "Q41",
+    "question": "Which one of the following is NOT a method used for logging messages in a server-side script for a privately-scoped application?",
+    "options": [
+      "gs.log()",
+      "gs.error()",
+      "gs.warn()",
+      "gs.debug()"
+    ],
+    "correctAnswer": "gs.log()"
+  },
+  {
+    "id": "Q42",
+    "question": "What syntax is used in a Record Producer script to access values from Record Producer form fields?",
+    "options": [
+      "producer.field_name",
+      "producer.variable_name",
+      "current.variable_name",
+      "current.field_name"
+    ],
+    "correctAnswer": "producer.variable_name"
+  },
+  {
+    "id": "Q43",
+    "question": "Which one of the following is true for a Script Include with a Protection Policy value of Protected?",
+    "options": [
+      "Any user with the protected_edit role can see and edit the Script Include",
+      "The Protection policy option can only be enabled by a user with the admin role",
+      "The Protection Policy is applied only if the system property value is true",
+      "The Protection Policy is applied only if the application is downloaded from the ServiceNow App Store"
+    ],
+    "correctAnswer": "The Protection Policy is applied only if the application is downloaded from the ServiceNow App Store"
+  },
+  {
+    "id": "Q44",
+    "question": "Which one of the following is true regarding Application Scope?",
+    "options": [
+      "All applications are automatically part of the Global scope",
+      "Applications downloaded from 3rd party developers cannot have naming conflicts",
+      "Any developer can edit any application",
+      "Developers can choose the prefix for a scope's namespace"
+    ],
+    "correctAnswer": "Applications downloaded from 3rd party developers cannot have naming conflicts"
+  },
+  {
+    "id": "Q45",
+    "question": "Which objects can be used in inbound action scripts?",
+    "options": [
+      "Current and event",
+      "Current and email",
+      "Current and producer",
+      "Current and previous"
+    ],
+    "correctAnswer": "Current and email"
+  },
+  {
+    "id": "Q46",
+    "question": "Which Application Access configuration field(s) are NOT available if the Can read field is NOT selected?",
+    "options": [
+      "All access to this table via web services",
+      "Can create, Can update, and Can delete",
+      "Can read does not affect other Application Access fields",
+      "Allow configuration"
+    ],
+    "correctAnswer": "Can create, Can update, and Can delete"
+  },
+  {
+    "id": "Q47",
+    "question": "Which one of the following client-side scripts apply to Record Producers?",
+    "options": [
+      "Catalog Client Scripts and Catalog UI Policies",
+      "UI Scripts and UI Actions",
+      "UI Scripts and Record Producer scripts",
+      "Client Scripts and UI Policies"
+    ],
+    "correctAnswer": "Catalog Client Scripts and Catalog UI Policies"
+  },
+  {
+    "id": "Q48",
+    "question": "From the list below, identify one reason an application might NOT be a good fit with ServiceNow.",
+    "options": [
+      "Needs workflow to manage processes",
+      "Requires as-is use of low-level programming libraries",
+      "Requires reporting capabilities",
+      "Uses forms extensively to interact with data"
+    ],
+    "correctAnswer": "Requires as-is use of low-level programming libraries"
+  },
+  {
+    "id": "Q49",
+    "question": "Which one of the following is NOT a UI Action type?",
+    "options": [
+      "List choice",
+      "Form button",
+      "List banner button",
+      "Form choice"
+    ],
+    "correctAnswer": "Form choice"
+  },
+  {
+    "id": "Q50",
+    "question": "Which one of the following is NOT the purpose of application scoping?",
+    "options": [
+      "Provide a relationship between application artifacts",
+      "Provide a way of tracking the user who developed an application",
+      "Provide a namespace to prevent cross-application name collisions",
+      "Provide controls for how scripts from another scope can alter tables"
+    ],
+    "correctAnswer": "Provide a way of tracking the user who developed an application"
+  },
+  {
+    "id": "Q51",
+    "question": "When configuring the content of an Email Notification, which syntax references event properties?",
+    "options": [
+      "${event.<property name>}",
+      "${current.<property name>}",
+      "${property name>.getDisplayValue()}",
+      "${gs.<property name>}"
+    ],
+    "correctAnswer": "${event.<property name>}"
+  },
+  {
+    "id": "Q52",
+    "question": "A scoped application containing Flow Designer content dedicated to a particular application is called a(n):",
+    "options": [
+      "Spoke",
+      "Bundle",
+      "Action Way",
+      "Flow"
+    ],
+    "correctAnswer": "Spoke"
+  },
+  {
+    "id": "Q53",
+    "question": "The source control operation used to store local changes on an instance for later application is called:",
+    "options": [
+      "Tag",
+      "Stash",
+      "Update Set",
+      "Branch"
+    ],
+    "correctAnswer": "Stash"
+  },
+  {
+    "id": "Q54",
+    "question": "Which one of the following is NOT required to link a ServiceNow application to a Git repository?",
+    "options": [
+      "Password",
+      "URL",
+      "User name",
+      "Application name"
+    ],
+    "correctAnswer": "Application name"
+  },
+  {
+    "id": "Q55",
+    "question": "When configuring a REST Message, the Endpoint is:",
+    "options": [
+      "The commands to the REST script to stop execution",
+      "The URI of the data to be accessed, queried, or modified",
+      "Information about the format of the returned data",
+      "The response from the provider indicating no data to send back"
+    ],
+    "correctAnswer": "The URI of the data to be accessed, queried, or modified"
+  },
+  {
+    "id": "Q56",
+    "question": "Which role grants access to source control repository operations?",
+    "options": [
+      "Admin",
+      "Source_control",
+      "Git_admin",
+      "Source_control_admin"
+    ],
+    "correctAnswer": "Source_control_admin"
+  },
+  {
+    "id": "Q57",
+    "question": "Which of the following is not a debugging strategy for client-side scripts?",
+    "options": [
+      "g_form.addInfoMessage()",
+      "Field Watcher",
+      "jslog()",
+      "gs.log()"
+    ],
+    "correctAnswer": "gs.log()"
+  },
+  {
+    "id": "Q58",
+    "question": "If the Create module field is selected when creating a table, what is the new module's default behavior?",
+    "options": [
+      "Open an empty form so new records can be created",
+      "Open a link to a wiki article with instructions",
+      "Display an empty homepage for the application",
+      "Display a list of all records from the table"
+    ],
+    "correctAnswer": "Display a list of all records from the table"
+  },
+  {
+    "id": "Q59",
+    "question": "How many application menus can an application have?",
+    "options": [
+      "3 - user, admin, and ServiceNow admin modules",
+      "As many as the application design requires",
+      "2 - user modules and admin modules",
+      "1 - used for all application modules"
+    ],
+    "correctAnswer": "As many as the application design requires"
+  },
+  {
+    "id": "Q60",
+    "question": "What is the Workflow context?",
+    "options": [
+      "The business reason for which a workflow is designed",
+      "The table for which a workflow is defined plus any condition",
+      "A checked-out workflow which is being edited",
+      "It is generated from a workflow version, executes and follows transitions"
+    ],
+    "correctAnswer": "It is generated from a workflow version, executes and follows transitions"
+  },
+  {
+    "id": "Q61",
+    "question": "Which one of the following is NOT true for modules?",
+    "options": [
+      "Every module must be associated with tables",
+      "Modules open content pages",
+      "Access to modules is controlled with roles",
+      "Every module must be part of an application menu"
+    ],
+    "correctAnswer": "Every module must be associated with tables"
+  },
+  {
+    "id": "Q62",
+    "question": "What are the benefits of storing the majority of an application logic in Script Includes?",
+    "options": [
+      "Scripts run faster than other server-side logic",
+      "Only run when called, script logic is hidden, changes made at single place",
+      "Script includes can access client-side APIs",
+      "Script includes bypass Access Control rules"
+    ],
+    "correctAnswer": "Only run when called, script logic is hidden, changes made at single place"
+  },
+  {
+    "id": "Q63",
+    "question": "What are application files in a ServiceNow application?",
+    "options": [
+      "An XML export of an application's table records",
+      "ServiceNow artifacts comprising an application",
+      "CSV files containing data imported into an application",
+      "XML exports of an application's update set"
+    ],
+    "correctAnswer": "ServiceNow artifacts comprising an application"
+  },
+  {
+    "id": "Q64",
+    "question": "Which of the following is true about Script Includes?",
+    "options": [
+      "Only one function can be stored in a classless script include",
+      "A centralized location for reusable functions",
+      "A class-less script is callable from client side",
+      "Most are called from client scripts"
+    ],
+    "correctAnswer": "A centralized location for reusable functions"
+  },
+  {
+    "id": "Q65",
+    "question": "Which of the following is not a way to install an application on a ServiceNow instance?",
+    "options": [
+      "Select the copy button on application record",
+      "Download from ServiceNow Store",
+      "Download from ServiceNow Share web site",
+      "Install from application repository"
+    ],
+    "correctAnswer": "Select the copy button on application record"
+  },
+  {
+    "id": "Q66",
+    "question": "Not a feature available in Studio:",
+    "options": [
+      "Code search",
+      "Quick creation of scripts and files",
+      "Push to repository",
+      "Ability to merge branches"
+    ],
+    "correctAnswer": "Ability to merge branches"
+  },
+  {
+    "id": "Q67",
+    "question": "Script Include features include:",
+    "options": [
+      "Server-side reusable JavaScript and library of functions in a single location",
+      "Client-side reusable JavaScript",
+      "Database triggers",
+      "UI component library"
+    ],
+    "correctAnswer": "Server-side reusable JavaScript and library of functions in a single location"
+  },
+  {
+    "id": "Q68",
+    "question": "Why create custom applications on ServiceNow?",
+    "options": [
+      "To give users every option available and any access",
+      "To replace outdated business processes, extend service delivery, and extend value of ServiceNow",
+      "To bypass ServiceNow security model",
+      "To replace ServiceNow base tables"
+    ],
+    "correctAnswer": "To replace outdated business processes, extend service delivery, and extend value of ServiceNow"
+  },
+  {
+    "id": "Q69",
+    "question": "In delegated development, can administrators grant non-administrators the ability to develop applications in global scope?",
+    "options": [
+      "True",
+      "False",
+      "Only with admin approval",
+      "Only for specific file types"
+    ],
+    "correctAnswer": "False"
+  },
+  {
+    "id": "Q70",
+    "question": "When should you extend an existing table?",
+    "options": [
+      "When a table exists with similar fields, scripts/workflows are useful, and you want approval activities",
+      "When you want to create a completely new data model",
+      "When you need to bypass parent table ACLs",
+      "When the parent table has no useful fields"
+    ],
+    "correctAnswer": "When a table exists with similar fields, scripts/workflows are useful, and you want approval activities"
+  },
+  {
+    "id": "Q71",
+    "question": "If 'Can read' is deselected in Application Access, which fields are NOT available?",
+    "options": [
+      "Can create, Can update, and Can delete",
+      "Allow access to table via web services",
+      "Allow configuration",
+      "All of the above"
+    ],
+    "correctAnswer": "Can create, Can update, and Can delete"
+  },
+  {
+    "id": "Q72",
+    "question": "To see published application artifacts, you should:",
+    "options": [
+      "Enter the application name in Global search",
+      "Examine the Application Files Related List in the application to be published",
+      "Open artifact records individually",
+      "Use update sets"
+    ],
+    "correctAnswer": "Examine the Application Files Related List in the application to be published"
+  },
+  {
+    "id": "Q73",
+    "question": "Which is NOT available in Form Designer?",
+    "options": [
+      "Adding fields to form layout",
+      "Creating new fields",
+      "Removing fields from layout",
+      "Schema Map"
+    ],
+    "correctAnswer": "Schema Map"
+  },
+  {
+    "id": "Q74",
+    "question": "What are Web Services?",
+    "options": [
+      "Database queries over HTTP",
+      "Web-based methods allowing applications to connect to other software over a network",
+      "ServiceNow-specific REST endpoints",
+      "Browser-based testing tools"
+    ],
+    "correctAnswer": "Web-based methods allowing applications to connect to other software over a network"
+  },
+  {
+    "id": "Q75",
+    "question": "Which method returns true for a given role and false otherwise?",
+    "options": [
+      "g_user.hasRole()",
+      "g_user.hasRoleExactly()",
+      "g_user.hasRoleOnly()",
+      "g_user.hasRoleFromList()"
+    ],
+    "correctAnswer": "g_user.hasRoleExactly()"
+  },
+  {
+    "id": "Q76",
+    "question": "Are mobile modules created by default when creating a table?",
+    "options": [
+      "True",
+      "False",
+      "Only for Task tables",
+      "Only in global scope"
+    ],
+    "correctAnswer": "False"
+  },
+  {
+    "id": "Q77",
+    "question": "How do you organize fields on a form?",
+    "options": [
+      "Views",
+      "Sections",
+      "Tabs",
+      "Modules"
+    ],
+    "correctAnswer": "Sections"
+  },
+  {
+    "id": "Q78",
+    "question": "The g_scratchpad object exists in mobile platform?",
+    "options": [
+      "True",
+      "False",
+      "Only in Service Portal",
+      "Only in Agent Workspace"
+    ],
+    "correctAnswer": "False"
+  },
+  {
+    "id": "Q79",
+    "question": "In a SOAP message, which syntax indicates a variable when the function is called?",
+    "options": [
+      "{{variable_name}}",
+      "${variable_name}",
+      "#variable_name#",
+      "[variable_name]"
+    ],
+    "correctAnswer": "${variable_name}"
+  },
+  {
+    "id": "Q80",
+    "question": "Given: Table.None→Admin&ITIL, Table.*→Admin, Table.u_field_3→ITIL. What can ITIL see?",
+    "options": [
+      "All fields",
+      "No fields",
+      "Field 3 only",
+      "All fields except field 3"
+    ],
+    "correctAnswer": "Field 3 only"
+  },
+  {
+    "id": "Q81",
+    "question": "Which method is used to get the current user's sys_id in a server-side script?",
+    "options": [
+      "gs.getUserID()",
+      "gs.getSysID()",
+      "current.sys_id",
+      "gs.getUser().getID()"
+    ],
+    "correctAnswer": "gs.getUserID()"
+  },
+  {
+    "id": "Q82",
+    "question": "Which method is used to retrieve an application property value?",
+    "options": [
+      "gs.getProperty()",
+      "gs.getAppProperty()",
+      "system.getProperty()",
+      "gs.property()"
+    ],
+    "correctAnswer": "gs.getProperty()"
+  },
+  {
+    "id": "Q83",
+    "question": "If the delete option is unchecked in Application Access, can scripts from other scopes delete records?",
+    "options": [
+      "Yes, with admin role",
+      "No, they cannot delete records",
+      "Only through web services",
+      "Only through workflows"
+    ],
+    "correctAnswer": "No, they cannot delete records"
+  },
+  {
+    "id": "Q84",
+    "question": "Business Rules use which server-side objects?",
+    "options": [
+      "GlideUser and GlideRecord",
+      "GlideSystem and GlideRecord",
+      "GlideForm and GlideRecord",
+      "GlideAjax and GlideRecord"
+    ],
+    "correctAnswer": "GlideSystem and GlideRecord"
+  },
+  {
+    "id": "Q85",
+    "question": "In an async Business Rule, which object is NOT available?",
+    "options": [
+      "current",
+      "GlideSystem",
+      "previous",
+      "GlideRecord"
+    ],
+    "correctAnswer": "previous"
+  },
+  {
+    "id": "Q86",
+    "question": "What is a Workflow's runtime environment called?",
+    "options": [
+      "Workflow Engine",
+      "Workflow Context",
+      "Workflow Runtime",
+      "Workflow Instance"
+    ],
+    "correctAnswer": "Workflow Context"
+  },
+  {
+    "id": "Q87",
+    "question": "gs.eventQueue() is used by which ServiceNow features?",
+    "options": [
+      "Business Rules and Workflows",
+      "Email Notifications and Script Actions",
+      "Client Scripts and UI Policies",
+      "Scheduled Jobs and Reports"
+    ],
+    "correctAnswer": "Email Notifications and Script Actions"
+  },
+  {
+    "id": "Q88",
+    "question": "Email Notifications and Script Actions are triggered by events.",
+    "options": [
+      "True",
+      "False",
+      "Only Email Notifications",
+      "Only Script Actions"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q89",
+    "question": "If ServiceNow requests data from an external web service, ServiceNow is the web service:",
+    "options": [
+      "Provider",
+      "Consumer",
+      "Publisher",
+      "Host"
+    ],
+    "correctAnswer": "Consumer"
+  },
+  {
+    "id": "Q90",
+    "question": "If ServiceNow provides data to an external system, ServiceNow is the web service:",
+    "options": [
+      "Consumer",
+      "Producer/Provider",
+      "Client",
+      "Subscriber"
+    ],
+    "correctAnswer": "Producer/Provider"
+  },
+  {
+    "id": "Q91",
+    "question": "Server-side scripts are more secure than client-side scripts.",
+    "options": [
+      "True",
+      "False",
+      "They are equally secure",
+      "Depends on the script type"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q92",
+    "question": "A message sent FROM ServiceNow is classified as:",
+    "options": [
+      "Inbound",
+      "Outbound",
+      "Internal",
+      "Bidirectional"
+    ],
+    "correctAnswer": "Outbound"
+  },
+  {
+    "id": "Q93",
+    "question": "A message sent TO ServiceNow is classified as:",
+    "options": [
+      "Outbound",
+      "Inbound",
+      "External",
+      "Bidirectional"
+    ],
+    "correctAnswer": "Inbound"
+  },
+  {
+    "id": "Q94",
+    "question": "The Task table is considered a:",
+    "options": [
+      "Child table only",
+      "Parent and Base table",
+      "System table only",
+      "Reference table"
+    ],
+    "correctAnswer": "Parent and Base table"
+  },
+  {
+    "id": "Q95",
+    "question": "Which of the following is NOT a standard report type?",
+    "options": [
+      "Bar",
+      "Pie",
+      "Chart",
+      "List"
+    ],
+    "correctAnswer": "Chart"
+  },
+  {
+    "id": "Q96",
+    "question": "Inbound Script Action objects include:",
+    "options": [
+      "Current and previous",
+      "Current and email",
+      "Current and event",
+      "Current and producer"
+    ],
+    "correctAnswer": "Current and email"
+  },
+  {
+    "id": "Q97",
+    "question": "Can Field Watcher check 2 fields at once?",
+    "options": [
+      "True",
+      "False",
+      "Only in global scope",
+      "Only for reference fields"
+    ],
+    "correctAnswer": "False"
+  },
+  {
+    "id": "Q98",
+    "question": "How does ServiceNow match inbound email to existing records?",
+    "options": [
+      "Record link",
+      "Subject line",
+      "Watermark",
+      "sys_id"
+    ],
+    "correctAnswer": "Watermark"
+  },
+  {
+    "id": "Q99",
+    "question": "What is a benefit of creating an Application Properties page for each application?",
+    "options": [
+      "It speeds up application loading",
+      "Developers or admins can adjust behavior without altering artifacts",
+      "It provides additional security",
+      "It enables mobile support"
+    ],
+    "correctAnswer": "Developers or admins can adjust behavior without altering artifacts"
+  },
+  {
+    "id": "Q100",
+    "question": "Studio's code search searches for code in current application only?",
+    "options": [
+      "True",
+      "False",
+      "It searches all applications",
+      "It searches global scope only"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q101",
+    "question": "An app developer enables 'Allow access to this table via web services'. What is the result?",
+    "options": [
+      "Users can write but not delete via web services",
+      "Developers from other scopes can write scripts for this table",
+      "A user with correct permissions querying via web services can access table records",
+      "Users can access records regardless of permissions"
+    ],
+    "correctAnswer": "A user with correct permissions querying via web services can access table records"
+  },
+  {
+    "id": "Q102",
+    "question": "Which server-side API debug log method is available for scoped applications?",
+    "options": [
+      "gs.debuglog()",
+      "gs.info()",
+      "gs.log()",
+      "gs.print()"
+    ],
+    "correctAnswer": "gs.info()"
+  },
+  {
+    "id": "Q103",
+    "question": "Which determines the relationships between fields in an Import Set table and an existing ServiceNow table?",
+    "options": [
+      "Data Sources",
+      "Transform Map",
+      "Business Service Management Map",
+      "Schema Map Relationship Builder"
+    ],
+    "correctAnswer": "Transform Map"
+  },
+  {
+    "id": "Q104",
+    "question": "Which actions can a Business Rule take without scripting?",
+    "options": [
+      "Set field values and generate an event",
+      "Set field values and query the database",
+      "Set field values and add message",
+      "Set field values and write to the system log"
+    ],
+    "correctAnswer": "Set field values and add message"
+  },
+  {
+    "id": "Q105",
+    "question": "When creating application tables, which other role does an application typically have besides the user role?",
+    "options": [
+      "Application Super User",
+      "Application Admin",
+      "Application Fulfiller",
+      "Application Manager"
+    ],
+    "correctAnswer": "Application Admin"
+  },
+  {
+    "id": "Q106",
+    "question": "A developer wants to set up a module that allows inserting new records. Which configuration option?",
+    "options": [
+      "Filter",
+      "Link type",
+      "Application Menu",
+      "Table"
+    ],
+    "correctAnswer": "Link type"
+  },
+  {
+    "id": "Q107",
+    "question": "Which database operations can be controlled with Application Access? (Choose 2)",
+    "options": [
+      "Update and Create",
+      "Execute and Query",
+      "Query and Delete",
+      "Update and Execute"
+    ],
+    "correctAnswer": "Update and Create"
+  },
+  {
+    "id": "Q108",
+    "question": "Server-side scripts manage what?",
+    "options": [
+      "User access",
+      "Database and backend",
+      "Playbook access",
+      "Forms and Fields"
+    ],
+    "correctAnswer": "Database and backend"
+  },
+  {
+    "id": "Q109",
+    "question": "Which method can be used to install an application on a ServiceNow instance?",
+    "options": [
+      "Import from an XML file",
+      "Install from Google Play Store",
+      "Install from Application Repository and ServiceNow Store",
+      "Use the Install button on the application record"
+    ],
+    "correctAnswer": "Install from Application Repository and ServiceNow Store"
+  },
+  {
+    "id": "Q110",
+    "question": "Where can an application be published in ServiceNow?",
+    "options": [
+      "To a local USB device",
+      "To an application repository, ServiceNow Store, or Update Set",
+      "To a local drive",
+      "To a spreadsheet"
+    ],
+    "correctAnswer": "To an application repository, ServiceNow Store, or Update Set"
+  },
+  {
+    "id": "Q111",
+    "question": "What is displayed to delegated developers to package changes for deployment in Studio?",
+    "options": [
+      "Tools tab",
+      "Export to XML",
+      "Update Set Picker",
+      "Publish Button"
+    ],
+    "correctAnswer": "Update Set Picker"
+  },
+  {
+    "id": "Q112",
+    "question": "In a privately-scoped application, which methods are used for logging in server-side scripts?",
+    "options": [
+      "gs.logError() and gs.log()",
+      "gs.log() and gs.debug()",
+      "gs.debug() and gs.info()",
+      "gs.info() and gs.error()"
+    ],
+    "correctAnswer": "gs.info() and gs.error()"
+  },
+  {
+    "id": "Q113",
+    "question": "What is the ServiceNow Store?",
+    "options": [
+      "Alternate name for ServiceNow Developer Share site",
+      "Marketplace for free and paid certified ServiceNow applications and integrations",
+      "Source for ServiceNow Community created content",
+      "Downloadable content ServiceNow script archive"
+    ],
+    "correctAnswer": "Marketplace for free and paid certified ServiceNow applications and integrations"
+  },
+  {
+    "id": "Q114",
+    "question": "What is the ServiceNow Application Repository?",
+    "options": [
+      "A database containing custom ServiceNow applications",
+      "A database for logging application errors",
+      "A database of ServiceNow provided applications",
+      "A database for tracking user permissions"
+    ],
+    "correctAnswer": "A database containing custom ServiceNow applications"
+  },
+  {
+    "id": "Q115",
+    "question": "Which items are valid UI Action types in ServiceNow?",
+    "options": [
+      "Workflow action, List choice, Form button",
+      "List choice, List banner button, Form button",
+      "Record navigation button, Form button, Form choice",
+      "List banner button, Form button, Form choice"
+    ],
+    "correctAnswer": "List choice, List banner button, Form button"
+  },
+  {
+    "id": "Q116",
+    "question": "What is a characteristic of Modules?",
+    "options": [
+      "Modules cannot open forms or lists",
+      "Access to Modules is not controlled with roles",
+      "Every Module must be part of an Application Menu",
+      "Every Module must be associated with a table"
+    ],
+    "correctAnswer": "Every Module must be part of an Application Menu"
+  },
+  {
+    "id": "Q117",
+    "question": "Which of the following methods is NOT part of the ServiceNow REST API?",
+    "options": [
+      "DELETE",
+      "COPY",
+      "POST",
+      "GET"
+    ],
+    "correctAnswer": "COPY"
+  },
+  {
+    "id": "Q118",
+    "question": "What is a function of an update set in ServiceNow Studio?",
+    "options": [
+      "To group configuration changes for transfer between instances",
+      "To track and monitor system performance metrics",
+      "To create new custom applications",
+      "To manage configurations directly in production"
+    ],
+    "correctAnswer": "To group configuration changes for transfer between instances"
+  },
+  {
+    "id": "Q119",
+    "question": "Which business requirements should be documented as part of the application development plan?",
+    "options": [
+      "Process steps, business problem, and users/stakeholders",
+      "Available licenses, project schedule, and database capacity",
+      "Business problem, database capacity, and project schedule",
+      "Process steps, available licenses, and database capacity"
+    ],
+    "correctAnswer": "Process steps, business problem, and users/stakeholders"
+  },
+  {
+    "id": "Q120",
+    "question": "What is the outcome of enabling Allow configuration Application Access option for a table?",
+    "options": [
+      "Out of scope apps can add new tables to the scoped application",
+      "Any user with the app's user role can modify scripts",
+      "Out of scope applications can create Business Rules for the table",
+      "Only in-scope app scripts can create Business Rules"
+    ],
+    "correctAnswer": "Out of scope applications can create Business Rules for the table"
+  },
+  {
+    "id": "Q121",
+    "question": "What is a scoped application that contains Flow Designer actions tailored for a specific application?",
+    "options": [
+      "Action",
+      "Bundle",
+      "Spoke",
+      "Flow"
+    ],
+    "correctAnswer": "Spoke"
+  },
+  {
+    "id": "Q122",
+    "question": "Where can GlideUser (g_user) methods be utilized?",
+    "options": [
+      "Client Scripts and UI Policies only",
+      "Client Scripts, UI Policies, and UI Actions",
+      "Business Rules only",
+      "Business Rules and Script Includes"
+    ],
+    "correctAnswer": "Client Scripts, UI Policies, and UI Actions"
+  },
+  {
+    "id": "Q123",
+    "question": "You want Table A's records installed with your application. How is this achieved?",
+    "options": [
+      "Table A is active and extends the Task table",
+      "Table A's records are added using the Create Application Files feature",
+      "Table A is not in the System Clone Exclude Tables list",
+      "Table A has an automatic number counter"
+    ],
+    "correctAnswer": "Table A's records are added using the Create Application Files feature"
+  },
+  {
+    "id": "Q124",
+    "question": "Which server-side object provides methods for working with dates in a scoped application?",
+    "options": [
+      "GlideRecord",
+      "GlideDateTime",
+      "current",
+      "GlideSystem"
+    ],
+    "correctAnswer": "GlideDateTime"
+  },
+  {
+    "id": "Q125",
+    "question": "Which Automated Test Framework test step is used to set up a specific user profile?",
+    "options": [
+      "Impersonation",
+      "Create a role",
+      "Create a user",
+      "Create a group"
+    ],
+    "correctAnswer": "Create a user"
+  },
+  {
+    "id": "Q126",
+    "question": "What does the Read-only protection policy for Script Includes allow?",
+    "options": [
+      "Application developers can customize the Script Include",
+      "Only administrators can delete the Script Include",
+      "Only administrators can edit the Script Include",
+      "Application developers can view the script logic but not change it"
+    ],
+    "correctAnswer": "Application developers can view the script logic but not change it"
+  },
+  {
+    "id": "Q127",
+    "question": "What happens to the List view when a new field is added to an existing table?",
+    "options": [
+      "The new field is not added to the List view",
+      "A new List View is created with the new field",
+      "The new field is added at the end of the List",
+      "The new field is added at the start of the List"
+    ],
+    "correctAnswer": "The new field is not added to the List view"
+  },
+  {
+    "id": "Q128",
+    "question": "What happens if a record producer script aborts the record generation process?",
+    "options": [
+      "Record creation displays an error message",
+      "Record is not generated in the Item Produced Record table",
+      "Record creation terminates without notifying the user",
+      "Record creation is redirected to a confirmation page"
+    ],
+    "correctAnswer": "Record is not generated in the Item Produced Record table"
+  },
+  {
+    "id": "Q129",
+    "question": "When writing a Client Script to provide feedback targeted at a specific field, which method should be used?",
+    "options": [
+      "g_form.addFieldMsg()",
+      "g_form.showFieldMsg()",
+      "g_form.showInfoMessage()",
+      "g_form.addInfoMessage()"
+    ],
+    "correctAnswer": "g_form.showFieldMsg()"
+  },
+  {
+    "id": "Q130",
+    "question": "What does Application Scoping provide?",
+    "options": [
+      "A namespace to prevent name collisions and controls for cross-scope access",
+      "A method to track users and control role-based access",
+      "A means to control roles and view application modules",
+      "A way to bypass Access Controls between applications"
+    ],
+    "correctAnswer": "A namespace to prevent name collisions and controls for cross-scope access"
+  },
+  {
+    "id": "Q131",
+    "question": "What happens when an existing table is extended?",
+    "options": [
+      "Specific fields from parent can be selected to inherit",
+      "New table inherits all fields and functionality from parent table",
+      "All required behavior must be newly scripted",
+      "Parent table records are copied to the new table"
+    ],
+    "correctAnswer": "New table inherits all fields and functionality from parent table"
+  },
+  {
+    "id": "Q132",
+    "question": "How is access to Application Menus and Modules controlled?",
+    "options": [
+      "Application Rules",
+      "Access Controls",
+      "Client Scripts",
+      "Roles"
+    ],
+    "correctAnswer": "Roles"
+  },
+  {
+    "id": "Q133",
+    "question": "What does the Enforcing option in Runtime access tracking do?",
+    "options": [
+      "Logs access requests and requires admin to authorize each request",
+      "Authorizes all requests without logging",
+      "Blocks all access requests to cross-scope resources",
+      "Logs and authorizes all requests automatically"
+    ],
+    "correctAnswer": "Logs access requests and requires admin to authorize each request"
+  },
+  {
+    "id": "Q134",
+    "question": "Which table stores the details of customizations included in an update set?",
+    "options": [
+      "Customer Update [sys_update_xml]",
+      "System Properties [sys_properties]",
+      "Update Set [sys_update_set]",
+      "Application Registry [sys_app]"
+    ],
+    "correctAnswer": "Customer Update [sys_update_xml]"
+  },
+  {
+    "id": "Q135",
+    "question": "Record Producers perform actions when a record is:",
+    "options": [
+      "Inserted",
+      "Deleted",
+      "Updated",
+      "Loaded"
+    ],
+    "correctAnswer": "Inserted"
+  },
+  {
+    "id": "Q136",
+    "question": "Modified Client Script APIs include:",
+    "options": [
+      "GlideAjax, g_form, and GlideDialogWindow",
+      "GlideRecord, GlideSystem, and GlideUser",
+      "g_form, g_list, and g_navigation",
+      "GlideAjax, GlideRecord, and current"
+    ],
+    "correctAnswer": "GlideAjax, g_form, and GlideDialogWindow"
+  },
+  {
+    "id": "Q137",
+    "question": "What is the default branch name when an application is linked to source control in Studio?",
+    "options": [
+      "master",
+      "sn_instance/<instance_name>",
+      "sn_instance/master",
+      "<instance-name>"
+    ],
+    "correctAnswer": "master"
+  },
+  {
+    "id": "Q138",
+    "question": "Script Actions use which objects?",
+    "options": [
+      "Current and previous",
+      "Current and event (parm1, parm2)",
+      "Current and email",
+      "Current and producer"
+    ],
+    "correctAnswer": "Current and event (parm1, parm2)"
+  },
+  {
+    "id": "Q139",
+    "question": "Util Functions are functions that can be called from other scripts.",
+    "options": [
+      "True",
+      "False",
+      "Only from server-side scripts",
+      "Only within the same scope"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q140",
+    "question": "ServiceNow can import data of which file types?",
+    "options": [
+      "Excel only",
+      "CSV only",
+      "REST and SOAP API data only",
+      "All of the above (Excel, CSV, REST, SOAP)"
+    ],
+    "correctAnswer": "All of the above (Excel, CSV, REST, SOAP)"
+  },
+  {
+    "id": "Q141",
+    "question": "REST Response can be in which format?",
+    "options": [
+      "JSON only",
+      "XML only",
+      "Either JSON or XML",
+      "HTML only"
+    ],
+    "correctAnswer": "Either JSON or XML"
+  },
+  {
+    "id": "Q142",
+    "question": "Who can receive email notifications?",
+    "options": [
+      "Static recipients only",
+      "Dynamic recipients only",
+      "Non-ServiceNow users only",
+      "All of the above (static, dynamic, and non-SNOW users)"
+    ],
+    "correctAnswer": "All of the above (static, dynamic, and non-SNOW users)"
+  },
+  {
+    "id": "Q143",
+    "question": "Which of the following is NOT a way for data to be entered into a ServiceNow application?",
+    "options": [
+      "ServiceNow list or form",
+      "Record producer",
+      "Custom UI page",
+      "Java package call"
+    ],
+    "correctAnswer": "Java package call"
+  },
+  {
+    "id": "Q144",
+    "question": "ServiceNow is specialized for building which type of applications?",
+    "options": [
+      "B2C applications",
+      "B2B applications",
+      "B2E (Business-to-Employee) applications",
+      "B2G applications"
+    ],
+    "correctAnswer": "B2E (Business-to-Employee) applications"
+  },
+  {
+    "id": "Q145",
+    "question": "Is dependency tracking available in scoped applications?",
+    "options": [
+      "True",
+      "False",
+      "Only in global scope",
+      "Only with admin role"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q146",
+    "question": "To publish apps in an app store, an instance must have a valid subscription.",
+    "options": [
+      "True",
+      "False",
+      "Only for paid apps",
+      "Only for enterprise instances"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q147",
+    "question": "Using update sets, can we track modifications in SDLC artifacts?",
+    "options": [
+      "True",
+      "False",
+      "Only for scripts",
+      "Only for UI changes"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q148",
+    "question": "A scoped UI Script library runs:",
+    "options": [
+      "When called from other script",
+      "Automatically by default",
+      "On demand",
+      "Continuously in background"
+    ],
+    "correctAnswer": "On demand"
+  },
+  {
+    "id": "Q149",
+    "question": "Each application should have a dedicated repository in Git.",
+    "options": [
+      "True",
+      "False",
+      "Only for large applications",
+      "Only for production apps"
+    ],
+    "correctAnswer": "False"
+  },
+  {
+    "id": "Q150",
+    "question": "What is the correct order of evaluating ACL rules?",
+    "options": [
+      "Script, Condition, Role",
+      "Condition, Role, Script",
+      "Role, Condition, Script",
+      "Role, Script, Condition"
+    ],
+    "correctAnswer": "Role, Condition, Script"
+  },
+  {
+    "id": "Q151",
+    "question": "What prevents users from logging into the ServiceNow user interface?",
+    "options": [
+      "Locked out status",
+      "Web service access only",
+      "Inactive account",
+      "Missing email address"
+    ],
+    "correctAnswer": "Web service access only"
+  },
+  {
+    "id": "Q152",
+    "question": "Which of the following are available in global scope?",
+    "options": [
+      "Automated Test Framework and Source Control",
+      "Flow Designer and Delegated Development",
+      "Script Includes and Business Rules",
+      "UI Policies and Client Scripts"
+    ],
+    "correctAnswer": "Automated Test Framework and Source Control"
+  },
+  {
+    "id": "Q153",
+    "question": "ACL returns true if the condition field is empty.",
+    "options": [
+      "True",
+      "False",
+      "Only for admin users",
+      "Depends on the ACL type"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q154",
+    "question": "ACL script field returns true by default if there is no script in the script field.",
+    "options": [
+      "True",
+      "False",
+      "Only for table-level ACLs",
+      "Depends on the scope"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q155",
+    "question": "A view cannot be changed for unsaved records.",
+    "options": [
+      "True",
+      "False",
+      "Only in Service Portal",
+      "Depends on the form configuration"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q156",
+    "question": "Scripts from other application scopes can never delete records from a scoped application.",
+    "options": [
+      "True",
+      "False",
+      "Only if Application Access allows it",
+      "Only with admin role"
+    ],
+    "correctAnswer": "False"
+  },
+  {
+    "id": "Q157",
+    "question": "If Can create is checked and Allow configuration is selected, what operations can be performed?",
+    "options": [
+      "Create only",
+      "Create and read",
+      "Create, update, and delete",
+      "All CRUD operations"
+    ],
+    "correctAnswer": "Create, update, and delete"
+  },
+  {
+    "id": "Q158",
+    "question": "Workflows are auto-saved.",
+    "options": [
+      "True",
+      "False",
+      "Only when published",
+      "Only in global scope"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q159",
+    "question": "Field-level ACLs have higher priority than table.* ACLs.",
+    "options": [
+      "True",
+      "False",
+      "They have equal priority",
+      "Depends on evaluation order"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q160",
+    "question": "Custom applications are automatically added to the Application Navigator.",
+    "options": [
+      "True",
+      "False",
+      "Only if a module is created",
+      "Only in global scope"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q161",
+    "question": "Which of the following is NOT used to retrieve data from a table in ACLs?",
+    "options": [
+      "table.id",
+      "table.field",
+      "table.*",
+      "table.none"
+    ],
+    "correctAnswer": "table.id"
+  },
+  {
+    "id": "Q162",
+    "question": "Which database operation cannot be controlled with Application Access?",
+    "options": [
+      "Create",
+      "Delete",
+      "Update",
+      "Query"
+    ],
+    "correctAnswer": "Query"
+  },
+  {
+    "id": "Q163",
+    "question": "Using Form Designer, can we configure list layouts?",
+    "options": [
+      "True",
+      "False",
+      "Only for related lists",
+      "Only in Service Portal"
+    ],
+    "correctAnswer": "False"
+  },
+  {
+    "id": "Q164",
+    "question": "If glide.login.home system property is set to a page, all users navigate to the same page on login.",
+    "options": [
+      "True",
+      "False",
+      "Only admin users",
+      "Only users without a homepage"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q165",
+    "question": "Event Registry is a table.",
+    "options": [
+      "True",
+      "False",
+      "It is a module",
+      "It is a property"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q166",
+    "question": "Annotations are added in forms to provide instructions to users.",
+    "options": [
+      "True",
+      "False",
+      "Only in Service Portal",
+      "Only in mobile view"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q167",
+    "question": "How to redirect from a Record Producer to another page?",
+    "options": [
+      "window.redirect",
+      "producer.url_redirect",
+      "current.redirect",
+      "g_form.redirect"
+    ],
+    "correctAnswer": "producer.url_redirect"
+  },
+  {
+    "id": "Q168",
+    "question": "What all are considered in providing access to data through ACLs?",
+    "options": [
+      "Fields/record access, role, condition, and script",
+      "Role and condition only",
+      "Script and role only",
+      "Fields and role only"
+    ],
+    "correctAnswer": "Fields/record access, role, condition, and script"
+  },
+  {
+    "id": "Q169",
+    "question": "If a list of roles is not defined in an ACL, access is:",
+    "options": [
+      "Granted to all users",
+      "Denied to all non-admin users",
+      "Granted to ITIL users",
+      "Denied to admin users"
+    ],
+    "correctAnswer": "Denied to all non-admin users"
+  },
+  {
+    "id": "Q170",
+    "question": "Can client scripts be used for both lists and forms?",
+    "options": [
+      "True",
+      "False",
+      "Only for forms",
+      "Only for lists"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q171",
+    "question": "What is the correct query method syntax in GlideRecord?",
+    "options": [
+      "query(), _query(), and get() are all valid",
+      "Only query() is valid",
+      "Only get() is valid",
+      "Only _query() is valid"
+    ],
+    "correctAnswer": "query(), _query(), and get() are all valid"
+  },
+  {
+    "id": "Q172",
+    "question": "ServiceNow can be used to:",
+    "options": [
+      "Generate Reports only",
+      "Automate Workflows only",
+      "Generate Reports, Automate Workflows, Work with Databases, and Extend ServiceNow",
+      "Work with Databases only"
+    ],
+    "correctAnswer": "Generate Reports, Automate Workflows, Work with Databases, and Extend ServiceNow"
+  },
+  {
+    "id": "Q173",
+    "question": "Whenever an event is triggered, an email notification is always sent to the user.",
+    "options": [
+      "True",
+      "False",
+      "Only if weight > 0",
+      "Only for high priority events"
+    ],
+    "correctAnswer": "False"
+  },
+  {
+    "id": "Q174",
+    "question": "Options in Protection Policy for Script Includes:",
+    "options": [
+      "None and Read-only",
+      "None, Read-only, and Protected",
+      "Protected only",
+      "Read-only and Protected"
+    ],
+    "correctAnswer": "None, Read-only, and Protected"
+  },
+  {
+    "id": "Q175",
+    "question": "Which report types support multiple datasets?",
+    "options": [
+      "Bar, Pie, and Line",
+      "Bar, Boxline, and Area",
+      "Pie, Histogram, and Line",
+      "Bar, Pie, and Area"
+    ],
+    "correctAnswer": "Bar, Boxline, and Area"
+  },
+  {
+    "id": "Q176",
+    "question": "To avoid over-approving, flows that use approvals should only be set to run:",
+    "options": [
+      "Any times required",
+      "Once",
+      "Dynamically determined",
+      "As needed"
+    ],
+    "correctAnswer": "Once"
+  },
+  {
+    "id": "Q177",
+    "question": "What is the background color for error messages?",
+    "options": [
+      "Blue",
+      "Red",
+      "Yellow",
+      "Green"
+    ],
+    "correctAnswer": "Red"
+  },
+  {
+    "id": "Q178",
+    "question": "What Link type creates a module that opens a Record Producer UI?",
+    "options": [
+      "HTML (from Arguments)",
+      "Content Page",
+      "Script (from Arguments)",
+      "URL (from Arguments)"
+    ],
+    "correctAnswer": "URL (from Arguments)"
+  },
+  {
+    "id": "Q179",
+    "question": "Which is NOT an example of when an application might use Scheduled Script Execution?",
+    "options": [
+      "Application needs to run a client-side script at the same time every day",
+      "Application needs to run a report weekly",
+      "Application needs to clean up old records",
+      "Application needs to send reminder emails"
+    ],
+    "correctAnswer": "Application needs to run a client-side script at the same time every day"
+  },
+  {
+    "id": "Q180",
+    "question": "g_form.showFieldMsg() displays a message where?",
+    "options": [
+      "Blue background, top of form",
+      "Red background, top of form",
+      "Blue background, below the specific field",
+      "Green background, below the field"
+    ],
+    "correctAnswer": "Blue background, below the specific field"
+  },
+  {
+    "id": "Q181",
+    "question": "g_form.addErrorMessage() displays a message where?",
+    "options": [
+      "Blue background, top of form",
+      "Red background, top of form",
+      "Below the specific field",
+      "In a popup dialog"
+    ],
+    "correctAnswer": "Red background, top of form"
+  },
+  {
+    "id": "Q182",
+    "question": "Which is the client-side AND server-side component?",
+    "options": [
+      "GlideUser",
+      "GlideAjax",
+      "GlideSystem",
+      "GlideForm"
+    ],
+    "correctAnswer": "GlideAjax"
+  },
+  {
+    "id": "Q183",
+    "question": "Delegated development allows non-admin developers to create and access applications.",
+    "options": [
+      "True",
+      "False",
+      "Only with source_control role",
+      "Only in development instances"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q184",
+    "question": "Developer permissions are:",
+    "options": [
+      "Universal across all applications",
+      "App-specific",
+      "Role-based only",
+      "Determined by instance configuration"
+    ],
+    "correctAnswer": "App-specific"
+  },
+  {
+    "id": "Q185",
+    "question": "glide.appcreator.company property is what data type?",
+    "options": [
+      "Numeric",
+      "Alpha numeric",
+      "String",
+      "Boolean"
+    ],
+    "correctAnswer": "String"
+  },
+  {
+    "id": "Q186",
+    "question": "How does the authorized user open the record document feed?",
+    "options": [
+      "Context menu",
+      "Related link",
+      "Module",
+      "Social module"
+    ],
+    "correctAnswer": "Context menu"
+  },
+  {
+    "id": "Q187",
+    "question": "What is the best UX format to use for Lists and Forms?",
+    "options": [
+      "Forms",
+      "Lists",
+      "Classic",
+      "Standard"
+    ],
+    "correctAnswer": "Classic"
+  },
+  {
+    "id": "Q188",
+    "question": "Which of the following is true about deleting a field from a table?",
+    "options": [
+      "User-defined non-inherited field can be deleted",
+      "Any field on the table can be deleted",
+      "Table record is deleted when a field is deleted",
+      "Inherited field can be deleted"
+    ],
+    "correctAnswer": "User-defined non-inherited field can be deleted"
+  },
+  {
+    "id": "Q189",
+    "question": "Workflows need to be checked out before they can be edited.",
+    "options": [
+      "True",
+      "False",
+      "Only published workflows",
+      "Only in global scope"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q190",
+    "question": "Workflows, Business Rules, and scripts can generate events.",
+    "options": [
+      "True",
+      "False",
+      "Only Business Rules can",
+      "Only scripts can"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": "Q191",
+    "question": "Is testing of applications possible in Studio?",
+    "options": [
+      "Yes",
+      "No",
+      "Only unit testing",
+      "Only integration testing"
+    ],
+    "correctAnswer": "Yes"
+  },
+  {
+    "id": "Q192",
+    "question": "Are transform maps reusable?",
+    "options": [
+      "Yes",
+      "No",
+      "Only within the same scope",
+      "Only for the same data source"
+    ],
+    "correctAnswer": "Yes"
+  },
+  {
+    "id": "Q193",
+    "question": "Can more fields be debugged at Access Control field level?",
+    "options": [
+      "Yes, using the debug (bug) icon",
+      "No, only one field at a time",
+      "Only in global scope",
+      "Only with admin role"
+    ],
+    "correctAnswer": "Yes, using the debug (bug) icon"
+  },
+  {
+    "id": "Q194",
+    "question": "If flash is applied, does the screen appear the same on both desktop and mobile?",
+    "options": [
+      "True",
+      "False",
+      "Depends on the configuration",
+      "Only in UI16"
+    ],
+    "correctAnswer": "False"
+  },
+  {
+    "id": "Q195",
+    "question": "Record Producer capabilities include:",
+    "options": [
+      "Can create user interface, fields as questions, and use scripts to define behavior",
+      "Only creates records without UI customization",
+      "Cannot use scripts",
+      "Must be submitted to sc_req_item table"
+    ],
+    "correctAnswer": "Can create user interface, fields as questions, and use scripts to define behavior"
+  },
+  {
+    "id": "Q196",
+    "question": "What is the method used to create a response body in a Resource Script?",
+    "options": [
+      "setBody",
+      "setResponse",
+      "writeBody",
+      "createResponse"
+    ],
+    "correctAnswer": "setBody"
+  },
+  {
+    "id": "Q197",
+    "question": "Available activities are displayed in which tab in the Workflow Editor palette?",
+    "options": [
+      "Custom, Core, and Packs",
+      "Activities, Transitions, and Events",
+      "Core, Global, and Scoped",
+      "Actions, Triggers, and Conditions"
+    ],
+    "correctAnswer": "Custom, Core, and Packs"
+  },
+  {
+    "id": "Q198",
+    "question": "Apps can be directly published to the ServiceNow Store.",
+    "options": [
+      "True",
+      "False",
+      "Only with publisher role",
+      "Only enterprise apps"
+    ],
+    "correctAnswer": "False"
+  },
+  {
+    "id": "Q199",
+    "question": "How can you run a scheduled script execution at the end of every month?",
+    "options": [
+      "Set day to 31; it automatically executes on the last day even if month has fewer days",
+      "Create a separate schedule for each month",
+      "Use a script to calculate the last day",
+      "Set to run on the 28th of every month"
+    ],
+    "correctAnswer": "Set day to 31; it automatically executes on the last day even if month has fewer days"
+  },
+  {
+    "id": "Q200",
+    "question": "To call functions from another scope in Script Includes, what must you do?",
+    "options": [
+      "Nothing, cross-scope access is automatic",
+      "Specify the scope of the function",
+      "Grant admin access",
+      "Create a global Script Include"
+    ],
+    "correctAnswer": "Specify the scope of the function"
+  }
+]

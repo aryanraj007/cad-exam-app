@@ -1,0 +1,125 @@
+.question-card {
+  animation: cardFadeIn 0.4s ease;
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.question-badge {
+  padding: 0.35rem 0.85rem;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.15));
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #a5b4fc;
+  letter-spacing: 0.02em;
+}
+
+.question-id {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+.question-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+}
+
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.option-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  color: #e2e8f0;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.option-btn:hover:not(:disabled) {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.35);
+  transform: translateX(4px);
+}
+
+.option-btn.selected {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2);
+}
+
+.option-btn.correct-option {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.5);
+  color: #d1fae5;
+}
+
+.option-btn.incorrect-option {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #fecaca;
+}
+
+.option-btn:disabled {
+  cursor: default;
+}
+
+.option-letter {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.5);
+  margin-top: 1px;
+}
+
+.option-btn.selected .option-letter {
+  background: rgba(99, 102, 241, 0.3);
+  color: #c7d2fe;
+}
+
+.option-btn.correct-option .option-letter {
+  background: rgba(16, 185, 129, 0.3);
+  color: #a7f3d0;
+}
+
+.option-btn.incorrect-option .option-letter {
+  background: rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+}
+
+.option-text {
+  flex: 1;
+}
