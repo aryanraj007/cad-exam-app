@@ -1,7 +1,7 @@
 import { CheckCircle, XCircle, AlertTriangle } from 'lucide-react';
 import './FeedbackOverlay.css';
 
-export default function FeedbackOverlay({ isCorrect, correctAnswer, onAcknowledge }) {
+export default function FeedbackOverlay({ isCorrect, correctAnswer }) {
   if (isCorrect) {
     return (
       <div className="feedback-overlay feedback-correct" role="alert">
@@ -24,10 +24,9 @@ export default function FeedbackOverlay({ isCorrect, correctAnswer, onAcknowledg
         <AlertTriangle size={16} />
         <span>Correct Answer:</span>
       </div>
-      <p className="feedback-answer-text">{correctAnswer}</p>
-      <button className="acknowledge-btn" onClick={onAcknowledge}>
-        I Understand — Continue
-      </button>
+      <p className="feedback-answer-text">
+        {Array.isArray(correctAnswer) ? correctAnswer.join(' | ') : correctAnswer}
+      </p>
     </div>
   );
 }

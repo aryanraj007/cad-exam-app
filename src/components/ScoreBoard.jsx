@@ -1,13 +1,14 @@
-import { Trophy, BarChart3, Target, RotateCcw, XCircle } from 'lucide-react';
+import { Trophy, BarChart3, Target, RotateCcw, XCircle, Layers } from 'lucide-react';
 import './ScoreBoard.css';
 
-export default function ScoreBoard({ total, correct, incorrect, errors, onRestart }) {
+export default function ScoreBoard({ total, correct, incorrect, errors, onRestart, onBackToSets, setLabel }) {
   const score = Math.round((correct / total) * 100);
   const passed = score >= 70;
 
   return (
     <div className="scoreboard">
       <div className={`score-hero ${passed ? 'hero-pass' : 'hero-fail'}`}>
+        {setLabel && <div className="set-label-badge">{setLabel}</div>}
         <div className="score-ring">
           <svg viewBox="0 0 120 120" className="ring-svg">
             <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="8" />
@@ -77,8 +78,14 @@ export default function ScoreBoard({ total, correct, incorrect, errors, onRestar
 
       <button className="restart-btn" onClick={onRestart}>
         <RotateCcw size={18} />
-        <span>Restart Quiz</span>
+        <span>Restart This Set</span>
       </button>
+      {onBackToSets && (
+        <button className="back-to-sets-btn" onClick={onBackToSets}>
+          <Layers size={18} />
+          <span>Back to Question Sets</span>
+        </button>
+      )}
     </div>
   );
 }

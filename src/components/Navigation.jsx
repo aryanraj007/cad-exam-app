@@ -6,8 +6,6 @@ export default function Navigation({
   totalQuestions,
   selectedAnswer,
   isEvaluated,
-  isCorrect,
-  isAcknowledged,
   onPrevious,
   onNext,
   onEvaluate,
@@ -15,9 +13,10 @@ export default function Navigation({
   const isFirst = currentIndex === 0;
   const isLast = currentIndex === totalQuestions - 1;
 
-  const canEvaluate = selectedAnswer && !isEvaluated;
-  const canGoNext = isEvaluated && (isCorrect || isAcknowledged) && !isLast;
-  const isFinished = isEvaluated && (isCorrect || isAcknowledged) && isLast;
+  const hasSelection = Array.isArray(selectedAnswer) ? selectedAnswer.length > 0 : !!selectedAnswer;
+  const canEvaluate = hasSelection && !isEvaluated;
+  const canGoNext = isEvaluated && !isLast;
+  const isFinished = isEvaluated && isLast;
 
   return (
     <div className="navigation-bar">

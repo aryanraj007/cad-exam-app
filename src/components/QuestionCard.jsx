@@ -11,10 +11,13 @@ export default function QuestionCard({
 }) {
   const getOptionClass = (option) => {
     let cls = 'option-btn';
-    if (!isEvaluated && selectedAnswer === option) cls += ' selected';
+    const isSelected = Array.isArray(selectedAnswer) ? selectedAnswer.includes(option) : selectedAnswer === option;
+    const isCorrectOption = Array.isArray(question.correctAnswer) ? question.correctAnswer.includes(option) : question.correctAnswer === option;
+    
+    if (!isEvaluated && isSelected) cls += ' selected';
     if (isEvaluated) {
-      if (option === question.correctAnswer) cls += ' correct-option';
-      else if (selectedAnswer === option) cls += ' incorrect-option';
+      if (isCorrectOption) cls += ' correct-option';
+      else if (isSelected) cls += ' incorrect-option';
     }
     return cls;
   };
@@ -27,7 +30,12 @@ export default function QuestionCard({
         <span className="question-badge">Question {questionIndex + 1} / {totalQuestions}</span>
         <span className="question-id">{question.id}</span>
       </div>
-      <h2 className="question-text">{question.question}</h2>
+      <h2 className="question-text">
+        {question.question}
+        {Array.isArray(question.correctAnswer) && (
+          <span className="multiple-select-hint"> (Select all that apply)</span>
+        )}
+      </h2>
       <div className="options-grid">
         {question.options.map((option, idx) => (
           <button
