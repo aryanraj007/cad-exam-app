@@ -80,34 +80,15 @@ export default function App() {
     setView(VIEWS.QUIZ);
   }, []);
 
-  const handleSelectAnswer = useCallback((option) => {
-    const isMultiple = Array.isArray(currentQ.correctAnswer);
-    setSelectedAnswers((prev) => {
-      const currentSelections = prev[currentQ.id];
-      if (isMultiple) {
-        let arr = currentSelections || [];
-        if (arr.includes(option)) {
-          arr = arr.filter((o) => o !== option);
-        } else {
-          arr = [...arr, option];
-        }
-        return { ...prev, [currentQ.id]: arr };
-      } else {
-        return { ...prev, [currentQ.id]: option };
-      }
-    });
-  }, [currentQ]);
-
-  const handleEvaluate = useCallback(() => {
-    const selected = selectedAnswers[currentQ.id];
-    const isMultiple = Array.isArray(currentQ.correctAnswer);
+  const doEvaluate = useCallback((selected, question) => {
+    const isMultiple = Array.isArray(question.correctAnswer);
     if (!selected || (isMultiple && selected.length === 0)) return;
     
     let correct = false;
     if (isMultiple) {
-      correct = selected.length === currentQ.correctAnswer.length && selected.every(val => currentQ.correctAnswer.includes(val));
+      correct = selected.length === question.correctAnswer.length && selected.every(val => question.correctAnswer.includes(val));
     } else {
-      correct = selected === currentQ.correctAnswer;
+      correct = selected === question.correctAnswer;
     }
 
     setIsEvaluated(true);
@@ -117,14 +98,46 @@ export default function App() {
     } else {
       setIncorrectCount((c) => c + 1);
       let selectedDisplay = isMultiple ? selected.join(', ') : selected;
-      let correctDisplay = isMultiple ? currentQ.correctAnswer.join(', ') : currentQ.correctAnswer;
+      let correctDisplay = isMultiple ? question.correctAnswer.join(', ') : question.correctAnswer;
       setErrorLog((prev) => [
         ...prev,
-        { question: currentQ.question, selected: selectedDisplay, correct: correctDisplay },
+        { question: question.question, selected: selectedDisplay, correct: correctDisplay },
       ]);
     }
-    trackAnswer(currentQ.id, correct, selected, currentQ.correctAnswer);
-  }, [selectedAnswers, currentQ]);
+    trackAnswer(question.id, correct, selected, question.correctAnswer);
+  }, []);
+
+  const handleSelectAnswer = useCallback((option) => {
+    if (isEvaluated) return;
+    
+    const isMultiple = Array.isArray(currentQ.correctAnswer);
+    const currentSelections = selectedAnswers[currentQ.id];
+    let newSelections;
+
+    if (isMultiple) {
+      let arr = currentSelections || [];
+      if (arr.includes(option)) {
+        arr = arr.filter((o) => o !== option);
+      } else {
+        arr = [...arr, option];
+      }
+      newSelections = arr;
+    } else {
+      newSelections = option;
+    }
+
+    setSelectedAnswers((prev) => ({ ...prev, [currentQ.id]: newSelections }));
+
+    if (!isMultiple) {
+      doEvaluate(newSelections, currentQ);
+    } else if (newSelections.length === currentQ.correctAnswer.length) {
+      doEvaluate(newSelections, currentQ);
+    }
+  }, [currentQ, isEvaluated, selectedAnswers, doEvaluate]);
+
+  const handleEvaluate = useCallback(() => {
+    doEvaluate(selectedAnswers[currentQ.id], currentQ);
+  }, [selectedAnswers, currentQ, doEvaluate]);
 
   const handleNext = useCallback(() => {
     if (currentIndex >= total - 1) {
