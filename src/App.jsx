@@ -104,11 +104,14 @@ export default function App() {
   }, []);
 
   const handleNavigateView = useCallback((newView) => {
-    if (newView !== view) {
-      window.history.pushState({ view: newView }, '', `#${newView}`);
-      setView(newView);
-    }
-  }, [view]);
+    setView((prevView) => {
+      if (prevView !== newView) {
+        window.history.pushState({ view: newView }, '', `#${newView}`);
+        return newView;
+      }
+      return prevView;
+    });
+  }, []);
 
   // Split questions into sets of 20 dynamically based on the active dataset
   const questionSets = useMemo(() => {
