@@ -32,6 +32,10 @@ const DATASETS = [
 
 export default function App() {
   const [view, setView] = useState(() => {
+    const hashView = window.location.hash.replace('#', '');
+    if (Object.values(VIEWS).includes(hashView)) {
+      return hashView;
+    }
     return localStorage.getItem('cad_view') || VIEWS.DASHBOARD;
   });
   const [activeDataset, setActiveDataset] = useState(() => {
@@ -80,6 +84,32 @@ export default function App() {
     localStorage.setItem('cad_errorLog', JSON.stringify(errorLog));
   }, [view, activeDataset, activeSetIndex, currentIndex, selectedAnswers, evaluatedQuestions, errorLog]);
 
+  useEffect(() => {
+    const handlePopState = () => {
+      const hashView = window.location.hash.replace('#', '');
+      if (Object.values(VIEWS).includes(hashView)) {
+        setView(hashView);
+      } else {
+        setView(VIEWS.DASHBOARD);
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    
+    // Ensure initial state matches URL if we started without a hash
+    if (!window.location.hash) {
+      window.history.replaceState({ view }, '', `#${view}`);
+    }
+
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const handleNavigateView = useCallback((newView) => {
+    if (newView !== view) {
+      window.history.pushState({ view: newView }, '', `#${newView}`);
+      setView(newView);
+    }
+  }, [view]);
+
   // Split questions into sets of 20 dynamically based on the active dataset
   const questionSets = useMemo(() => {
     if (!activeDataset) return [];
@@ -101,16 +131,16 @@ export default function App() {
 
   const handleSelectDataset = useCallback((dataset) => {
     setActiveDataset(dataset);
-    setView(VIEWS.WELCOME);
-  }, []);
+    handleNavigateView(VIEWS.WELCOME);
+  }, [handleNavigateView]);
 
   const handleBackToDashboard = useCallback(() => {
-    setView(VIEWS.DASHBOARD);
+    handleNavigateView(VIEWS.DASHBOARD);
     setActiveDataset(null);
     setActiveSetIndex(null);
   }, []);
 
-  const handleStart = useCallback(() => setView(VIEWS.SET_SELECT), []);
+  const handleStart = useCallback(() => handleNavigateView(VIEWS.SET_SELECT), [handleNavigateView]);
 
   const handleSelectSet = useCallback((setIdx) => {
     setActiveSetIndex(setIdx);
@@ -118,8 +148,8 @@ export default function App() {
     setSelectedAnswers({});
     setEvaluatedQuestions({});
     setErrorLog([]);
-    setView(VIEWS.QUIZ);
-  }, []);
+    handleNavigateView(VIEWS.QUIZ);
+  }, [handleNavigateView]);
 
   const doEvaluate = useCallback((selected, question) => {
     const isMultiple = Array.isArray(question.correctAnswer);
@@ -187,11 +217,11 @@ export default function App() {
   const handleNext = useCallback(() => {
     if (currentIndex >= total - 1) {
       trackCompletion(total, correctCount, incorrectCount);
-      setView(VIEWS.RESULTS);
+      handleNavigateView(VIEWS.RESULTS);
       return;
     }
     setCurrentIndex((i) => i + 1);
-  }, [currentIndex, total, correctCount, incorrectCount]);
+  }, [currentIndex, total, correctCount, incorrectCount, handleNavigateView]);
 
   const handlePrevious = useCallback(() => {
     if (currentIndex <= 0) return;
@@ -199,21 +229,21 @@ export default function App() {
   }, [currentIndex]);
 
   const handleBackToSets = useCallback(() => {
-    setView(VIEWS.SET_SELECT);
+    handleNavigateView(VIEWS.SET_SELECT);
     setActiveSetIndex(null);
     setCurrentIndex(0);
     setSelectedAnswers({});
     setEvaluatedQuestions({});
     setErrorLog([]);
-  }, []);
+  }, [handleNavigateView]);
 
   const handleRestart = useCallback(() => {
     setCurrentIndex(0);
     setSelectedAnswers({});
     setEvaluatedQuestions({});
     setErrorLog([]);
-    setView(VIEWS.QUIZ);
-  }, []);
+    handleNavigateView(VIEWS.QUIZ);
+  }, [handleNavigateView]);
 
   return (
     <div className="app-container">
@@ -271,7 +301,7 @@ export default function App() {
 
         {view === VIEWS.SET_SELECT && activeDataset && (
           <div className="set-select-screen">
-            <button className="back-btn" onClick={() => setView(VIEWS.WELCOME)}>
+            <button className="back-btn" onClick={() => handleNavigateView(VIEWS.WELCOME)}>
               &larr; Back to {activeDataset.title}
             </button>
             <h2 className="set-select-title">Choose a Question Set</h2>
