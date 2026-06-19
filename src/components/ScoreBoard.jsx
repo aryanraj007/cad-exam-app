@@ -1,7 +1,7 @@
 import { Trophy, BarChart3, Target, RotateCcw, XCircle, Layers } from 'lucide-react';
 import './ScoreBoard.css';
 
-export default function ScoreBoard({ total, correct, incorrect, errors, onRestart, onBackToSets, setLabel }) {
+export default function ScoreBoard({ total, correct, incorrect, errors, onRestart, onBackToSets, onBackToDashboard, setLabel }) {
   const score = Math.round((correct / total) * 100);
   const passed = score >= 70;
 
@@ -84,6 +84,11 @@ export default function ScoreBoard({ total, correct, incorrect, errors, onRestar
         <button className="back-to-sets-btn" onClick={onBackToSets}>
           <Layers size={18} />
           <span>Back to Question Sets</span>
+        </button>
+      )}
+      {onBackToDashboard && (
+        <button className="back-to-dashboard-btn" onClick={onBackToDashboard} style={{ marginTop: '10px', background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#9ca3af' }}>
+          <span>Back to Home Dashboard</span>
         </button>
       )}
     </div>

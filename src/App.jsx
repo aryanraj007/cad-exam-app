@@ -1,6 +1,7 @@
 import { useState, useCallback, useMemo } from 'react';
-import { Play, BookOpen, Clock, Award, Layers } from 'lucide-react';
-import allQuestions from './data/questions.json';
+import { Play, BookOpen, Clock, Award, Layers, Home } from 'lucide-react';
+import prepQuestions from './data/questions.json';
+import dumpQuestions from './data/questions_131.json';
 import Header from './components/Header';
 import ProgressBar from './components/ProgressBar';
 import QuestionCard from './components/QuestionCard';
@@ -11,16 +12,26 @@ import { trackAnswer, trackCompletion } from './utils/telemetry';
 import './App.css';
 
 const SET_SIZE = 20;
-const VIEWS = { WELCOME: 'welcome', SET_SELECT: 'set_select', QUIZ: 'quiz', RESULTS: 'results' };
+const VIEWS = { DASHBOARD: 'dashboard', WELCOME: 'welcome', SET_SELECT: 'set_select', QUIZ: 'quiz', RESULTS: 'results' };
 
-// Split questions into sets of 20
-const questionSets = [];
-for (let i = 0; i < allQuestions.length; i += SET_SIZE) {
-  questionSets.push(allQuestions.slice(i, i + SET_SIZE));
-}
+const DATASETS = [
+  { 
+    id: 'prep', 
+    title: 'ServiceNow CAD Prep', 
+    description: 'Certified Application Developer Exam Prep', 
+    questions: prepQuestions 
+  },
+  { 
+    id: 'dumps', 
+    title: 'ServiceNow CAD Dumps', 
+    description: '131 Real Exam Questions', 
+    questions: dumpQuestions 
+  }
+];
 
 export default function App() {
-  const [view, setView] = useState(VIEWS.WELCOME);
+  const [view, setView] = useState(VIEWS.DASHBOARD);
+  const [activeDataset, setActiveDataset] = useState(null);
   const [activeSetIndex, setActiveSetIndex] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
@@ -30,9 +41,30 @@ export default function App() {
   const [incorrectCount, setIncorrectCount] = useState(0);
   const [errorLog, setErrorLog] = useState([]);
 
+  // Split questions into sets of 20 dynamically based on the active dataset
+  const questionSets = useMemo(() => {
+    if (!activeDataset) return [];
+    const sets = [];
+    for (let i = 0; i < activeDataset.questions.length; i += SET_SIZE) {
+      sets.push(activeDataset.questions.slice(i, i + SET_SIZE));
+    }
+    return sets;
+  }, [activeDataset]);
+
   const activeQuestions = activeSetIndex !== null ? questionSets[activeSetIndex] : [];
   const total = activeQuestions.length;
   const currentQ = activeQuestions[currentIndex];
+
+  const handleSelectDataset = useCallback((dataset) => {
+    setActiveDataset(dataset);
+    setView(VIEWS.WELCOME);
+  }, []);
+
+  const handleBackToDashboard = useCallback(() => {
+    setView(VIEWS.DASHBOARD);
+    setActiveDataset(null);
+    setActiveSetIndex(null);
+  }, []);
 
   const handleStart = useCallback(() => setView(VIEWS.SET_SELECT), []);
 
@@ -84,9 +116,11 @@ export default function App() {
       setCorrectCount((c) => c + 1);
     } else {
       setIncorrectCount((c) => c + 1);
+      let selectedDisplay = isMultiple ? selected.join(', ') : selected;
+      let correctDisplay = isMultiple ? currentQ.correctAnswer.join(', ') : currentQ.correctAnswer;
       setErrorLog((prev) => [
         ...prev,
-        { question: currentQ.question, selected, correct: currentQ.correctAnswer },
+        { question: currentQ.question, selected: selectedDisplay, correct: correctDisplay },
       ]);
     }
     trackAnswer(currentQ.id, correct, selected, currentQ.correctAnswer);
@@ -123,7 +157,6 @@ export default function App() {
   }, []);
 
   const handleRestart = useCallback(() => {
-    // Restart same set
     setCurrentIndex(0);
     setSelectedAnswers({});
     setIsEvaluated(false);
@@ -136,18 +169,42 @@ export default function App() {
 
   return (
     <div className="app-container">
-      <Header total={allQuestions.length} />
+      <Header total={activeDataset ? activeDataset.questions.length : (prepQuestions.length + dumpQuestions.length)} />
 
       <div className="main-card">
-        {view === VIEWS.WELCOME && (
+        {view === VIEWS.DASHBOARD && (
+          <div className="dashboard-screen">
+            <h2 className="dashboard-title">ServiceNow CAD Practice Portal</h2>
+            <p className="dashboard-desc">Select an exam set to start your practice session.</p>
+            <div className="dashboard-grid">
+              {DATASETS.map((dataset) => (
+                <button
+                  key={dataset.id}
+                  className="dataset-card"
+                  onClick={() => handleSelectDataset(dataset)}
+                >
+                  <BookOpen size={32} className="dataset-icon" />
+                  <h3>{dataset.title}</h3>
+                  <p>{dataset.description}</p>
+                  <span className="dataset-count">{dataset.questions.length} Questions</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {view === VIEWS.WELCOME && activeDataset && (
           <div className="welcome-screen">
+            <button className="back-btn" onClick={handleBackToDashboard}>
+              <Home size={16} /> Back to Dashboard
+            </button>
             <div className="welcome-icon-wrap">
               <BookOpen size={32} />
             </div>
-            <h2 className="welcome-title">ServiceNow CAD Exam Prep</h2>
+            <h2 className="welcome-title">{activeDataset.title}</h2>
             <p className="welcome-desc">
-              Master the Certified Application Developer exam with {allQuestions.length} practice
-              questions organized into {questionSets.length} focused sets of {SET_SIZE} questions each.
+              {activeDataset.description} with {activeDataset.questions.length} practice
+              questions organized into {questionSets.length} focused sets.
             </p>
             <div className="welcome-info">
               <span className="info-chip"><Clock size={14} /> Self-paced</span>
@@ -161,10 +218,13 @@ export default function App() {
           </div>
         )}
 
-        {view === VIEWS.SET_SELECT && (
+        {view === VIEWS.SET_SELECT && activeDataset && (
           <div className="set-select-screen">
+            <button className="back-btn" onClick={() => setView(VIEWS.WELCOME)}>
+              &larr; Back to {activeDataset.title}
+            </button>
             <h2 className="set-select-title">Choose a Question Set</h2>
-            <p className="set-select-desc">Each set contains {SET_SIZE} questions. Pick one to start practicing.</p>
+            <p className="set-select-desc">Each set contains up to {SET_SIZE} questions. Pick one to start practicing.</p>
             <div className="sets-grid">
               {questionSets.map((set, idx) => (
                 <button
@@ -174,7 +234,7 @@ export default function App() {
                 >
                   <div className="set-number">Set {idx + 1}</div>
                   <div className="set-range">
-                    Q{idx * SET_SIZE + 1} — Q{Math.min((idx + 1) * SET_SIZE, allQuestions.length)}
+                    Q{idx * SET_SIZE + 1} — Q{Math.min((idx + 1) * SET_SIZE, activeDataset.questions.length)}
                   </div>
                   <div className="set-count">{set.length} Questions</div>
                 </button>
@@ -227,6 +287,7 @@ export default function App() {
             errors={errorLog}
             onRestart={handleRestart}
             onBackToSets={handleBackToSets}
+            onBackToDashboard={handleBackToDashboard}
             setLabel={`Set ${activeSetIndex + 1}`}
           />
         )}
