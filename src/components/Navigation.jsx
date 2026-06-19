@@ -30,23 +30,10 @@ export default function Navigation({
         <span>Previous</span>
       </button>
 
-      {!isEvaluated && (
-        <button
-          className="nav-btn nav-submit"
-          onClick={onEvaluate}
-          disabled={!canEvaluate}
-          aria-label="Submit answer"
-        >
-          <Send size={16} />
-          <span>Submit Answer</span>
-        </button>
-      )}
-
-      {isEvaluated && !isFinished && (
+      {!isLast && (
         <button
           className="nav-btn nav-next"
           onClick={onNext}
-          disabled={!canGoNext}
           aria-label="Next question"
         >
           <span>Next</span>
@@ -54,8 +41,13 @@ export default function Navigation({
         </button>
       )}
 
-      {isFinished && (
-        <button className="nav-btn nav-finish" onClick={onNext} aria-label="View results">
+      {isLast && (
+        <button 
+          className="nav-btn nav-finish" 
+          onClick={onNext} 
+          disabled={!isEvaluated}
+          aria-label="View results"
+        >
           <span>View Results</span>
           <ChevronRight size={18} />
         </button>

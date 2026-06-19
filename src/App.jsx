@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import { Play, BookOpen, Clock, Award, Layers, Home } from 'lucide-react';
 import dumpQuestions from './data/questions_131.json';
 import finalQuestions from './data/questions_109.json';
@@ -31,13 +31,54 @@ const DATASETS = [
 ];
 
 export default function App() {
-  const [view, setView] = useState(VIEWS.DASHBOARD);
-  const [activeDataset, setActiveDataset] = useState(null);
-  const [activeSetIndex, setActiveSetIndex] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedAnswers, setSelectedAnswers] = useState({});
-  const [evaluatedQuestions, setEvaluatedQuestions] = useState({});
-  const [errorLog, setErrorLog] = useState([]);
+  const [view, setView] = useState(() => {
+    return localStorage.getItem('cad_view') || VIEWS.DASHBOARD;
+  });
+  const [activeDataset, setActiveDataset] = useState(() => {
+    const savedId = localStorage.getItem('cad_activeDatasetId');
+    if (savedId) {
+      return DATASETS.find(ds => ds.id === savedId) || null;
+    }
+    return null;
+  });
+  const [activeSetIndex, setActiveSetIndex] = useState(() => {
+    const saved = localStorage.getItem('cad_activeSetIndex');
+    return saved ? parseInt(saved, 10) : null;
+  });
+  const [currentIndex, setCurrentIndex] = useState(() => {
+    const saved = localStorage.getItem('cad_currentIndex');
+    return saved ? parseInt(saved, 10) : 0;
+  });
+  const [selectedAnswers, setSelectedAnswers] = useState(() => {
+    const saved = localStorage.getItem('cad_selectedAnswers');
+    return saved ? JSON.parse(saved) : {};
+  });
+  const [evaluatedQuestions, setEvaluatedQuestions] = useState(() => {
+    const saved = localStorage.getItem('cad_evaluatedQuestions');
+    return saved ? JSON.parse(saved) : {};
+  });
+  const [errorLog, setErrorLog] = useState(() => {
+    const saved = localStorage.getItem('cad_errorLog');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('cad_view', view);
+    if (activeDataset) {
+      localStorage.setItem('cad_activeDatasetId', activeDataset.id);
+    } else {
+      localStorage.removeItem('cad_activeDatasetId');
+    }
+    if (activeSetIndex !== null) {
+      localStorage.setItem('cad_activeSetIndex', activeSetIndex.toString());
+    } else {
+      localStorage.removeItem('cad_activeSetIndex');
+    }
+    localStorage.setItem('cad_currentIndex', currentIndex.toString());
+    localStorage.setItem('cad_selectedAnswers', JSON.stringify(selectedAnswers));
+    localStorage.setItem('cad_evaluatedQuestions', JSON.stringify(evaluatedQuestions));
+    localStorage.setItem('cad_errorLog', JSON.stringify(errorLog));
+  }, [view, activeDataset, activeSetIndex, currentIndex, selectedAnswers, evaluatedQuestions, errorLog]);
 
   // Split questions into sets of 20 dynamically based on the active dataset
   const questionSets = useMemo(() => {
