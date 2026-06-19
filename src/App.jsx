@@ -1,6 +1,7 @@
 import { useState, useCallback, useMemo } from 'react';
 import { Play, BookOpen, Clock, Award, Layers, Home } from 'lucide-react';
 import dumpQuestions from './data/questions_131.json';
+import finalQuestions from './data/questions_109.json';
 import Header from './components/Header';
 import ProgressBar from './components/ProgressBar';
 import QuestionCard from './components/QuestionCard';
@@ -20,6 +21,12 @@ const DATASETS = [
     title: 'ServiceNow CAD Dumps', 
     description: '131 Real Exam Questions', 
     questions: dumpQuestions 
+  },
+  {
+    id: 'final',
+    title: 'ServiceNow CAD Final 109',
+    description: '109 Final Exam Questions',
+    questions: finalQuestions
   }
 ];
 
@@ -169,7 +176,7 @@ export default function App() {
 
   return (
     <div className="app-container">
-      <Header total={activeDataset ? activeDataset.questions.length : dumpQuestions.length} />
+      <Header total={activeDataset ? activeDataset.questions.length : (DATASETS.reduce((acc, ds) => acc + ds.questions.length, 0))} />
 
       <div className="main-card">
         {view === VIEWS.DASHBOARD && (
