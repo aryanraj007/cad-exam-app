@@ -8,6 +8,7 @@ import QuestionCard from './components/QuestionCard';
 import FeedbackOverlay from './components/FeedbackOverlay';
 import Navigation from './components/Navigation';
 import ScoreBoard from './components/ScoreBoard';
+import QuestionNavigator from './components/QuestionNavigator';
 import { trackAnswer, trackCompletion } from './utils/telemetry';
 import './App.css';
 
@@ -35,10 +36,7 @@ export default function App() {
   const [activeSetIndex, setActiveSetIndex] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
-  const [isEvaluated, setIsEvaluated] = useState(false);
-  const [isCorrect, setIsCorrect] = useState(false);
-  const [correctCount, setCorrectCount] = useState(0);
-  const [incorrectCount, setIncorrectCount] = useState(0);
+  const [evaluatedQuestions, setEvaluatedQuestions] = useState({});
   const [errorLog, setErrorLog] = useState([]);
 
   // Split questions into sets of 20 dynamically based on the active dataset
@@ -54,6 +52,11 @@ export default function App() {
   const activeQuestions = activeSetIndex !== null ? questionSets[activeSetIndex] : [];
   const total = activeQuestions.length;
   const currentQ = activeQuestions[currentIndex];
+
+  const correctCount = Object.values(evaluatedQuestions).filter(v => v === true).length;
+  const incorrectCount = Object.values(evaluatedQuestions).filter(v => v === false).length;
+  const isEvaluated = currentQ ? evaluatedQuestions[currentQ.id] !== undefined : false;
+  const isCorrect = currentQ ? evaluatedQuestions[currentQ.id] === true : false;
 
   const handleSelectDataset = useCallback((dataset) => {
     setActiveDataset(dataset);
@@ -72,10 +75,7 @@ export default function App() {
     setActiveSetIndex(setIdx);
     setCurrentIndex(0);
     setSelectedAnswers({});
-    setIsEvaluated(false);
-    setIsCorrect(false);
-    setCorrectCount(0);
-    setIncorrectCount(0);
+    setEvaluatedQuestions({});
     setErrorLog([]);
     setView(VIEWS.QUIZ);
   }, []);
@@ -91,12 +91,12 @@ export default function App() {
       correct = selected === question.correctAnswer;
     }
 
-    setIsEvaluated(true);
-    setIsCorrect(correct);
-    if (correct) {
-      setCorrectCount((c) => c + 1);
-    } else {
-      setIncorrectCount((c) => c + 1);
+    setEvaluatedQuestions((prev) => {
+      if (prev[question.id] !== undefined) return prev;
+      return { ...prev, [question.id]: correct };
+    });
+
+    if (!correct) {
       let selectedDisplay = isMultiple ? selected.join(', ') : selected;
       let correctDisplay = isMultiple ? question.correctAnswer.join(', ') : question.correctAnswer;
       setErrorLog((prev) => [
@@ -139,6 +139,10 @@ export default function App() {
     doEvaluate(selectedAnswers[currentQ.id], currentQ);
   }, [selectedAnswers, currentQ, doEvaluate]);
 
+  const handleNavigate = useCallback((index) => {
+    setCurrentIndex(index);
+  }, []);
+
   const handleNext = useCallback(() => {
     if (currentIndex >= total - 1) {
       trackCompletion(total, correctCount, incorrectCount);
@@ -146,15 +150,11 @@ export default function App() {
       return;
     }
     setCurrentIndex((i) => i + 1);
-    setIsEvaluated(false);
-    setIsCorrect(false);
   }, [currentIndex, total, correctCount, incorrectCount]);
 
   const handlePrevious = useCallback(() => {
     if (currentIndex <= 0) return;
     setCurrentIndex((i) => i - 1);
-    setIsEvaluated(false);
-    setIsCorrect(false);
   }, [currentIndex]);
 
   const handleBackToSets = useCallback(() => {
@@ -162,20 +162,14 @@ export default function App() {
     setActiveSetIndex(null);
     setCurrentIndex(0);
     setSelectedAnswers({});
-    setIsEvaluated(false);
-    setIsCorrect(false);
-    setCorrectCount(0);
-    setIncorrectCount(0);
+    setEvaluatedQuestions({});
     setErrorLog([]);
   }, []);
 
   const handleRestart = useCallback(() => {
     setCurrentIndex(0);
     setSelectedAnswers({});
-    setIsEvaluated(false);
-    setIsCorrect(false);
-    setCorrectCount(0);
-    setIncorrectCount(0);
+    setEvaluatedQuestions({});
     setErrorLog([]);
     setView(VIEWS.QUIZ);
   }, []);
@@ -257,7 +251,14 @@ export default function App() {
         )}
 
         {view === VIEWS.QUIZ && currentQ && (
-          <>
+          <div className="quiz-container">
+            <QuestionNavigator
+              totalQuestions={total}
+              currentIndex={currentIndex}
+              activeQuestions={activeQuestions}
+              evaluatedQuestions={evaluatedQuestions}
+              onNavigate={handleNavigate}
+            />
             <ProgressBar
               current={currentIndex}
               total={total}
@@ -289,7 +290,7 @@ export default function App() {
               onNext={handleNext}
               onEvaluate={handleEvaluate}
             />
-          </>
+          </div>
         )}
 
         {view === VIEWS.RESULTS && (
