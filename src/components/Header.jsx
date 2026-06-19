@@ -1,17 +1,17 @@
-import { BookOpen, Zap } from 'lucide-react';
+import { Zap } from 'lucide-react';
 import './Header.css';
 
-export default function Header({ total }) {
+export default function Header({ total, onHomeClick }) {
   return (
     <header className="app-header">
-      <div className="header-brand">
-        <div className="header-icon-wrap">
-          <BookOpen size={22} />
-        </div>
-        <div>
-          <h1 className="header-title">ServiceNow CAD Prep</h1>
-          <p className="header-subtitle">Certified Application Developer</p>
-        </div>
+      <div 
+        className="header-brand" 
+        onClick={onHomeClick} 
+        style={{ cursor: 'pointer' }}
+        title="Return to Dashboard"
+      >
+        <img src="/logo.png" alt="Lumina Logo" className="header-logo" />
+        <h1 className="header-title">Lumina</h1>
       </div>
       <div className="header-badge">
         <Zap size={14} />

@@ -217,7 +217,10 @@ export default function App() {
 
   return (
     <div className="app-container">
-      <Header total={activeDataset ? activeDataset.questions.length : (DATASETS.reduce((acc, ds) => acc + ds.questions.length, 0))} />
+      <Header 
+        total={activeDataset ? activeDataset.questions.length : (DATASETS.reduce((acc, ds) => acc + ds.questions.length, 0))} 
+        onHomeClick={handleBackToDashboard}
+      />
 
       <div className="main-card">
         {view === VIEWS.DASHBOARD && (
